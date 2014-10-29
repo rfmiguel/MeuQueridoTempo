@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		ACB0FDE419FEFDDB00906B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDE319FEFDDB00906B29 /* AppDelegate.swift */; };
-		ACB0FDE619FEFDDB00906B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDE519FEFDDB00906B29 /* ViewController.swift */; };
+		ACB0FDE619FEFDDB00906B29 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDE519FEFDDB00906B29 /* MapaViewController.swift */; };
 		ACB0FDE919FEFDDB00906B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FDE719FEFDDB00906B29 /* Main.storyboard */; };
 		ACB0FDEB19FEFDDB00906B29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FDEA19FEFDDB00906B29 /* Images.xcassets */; };
 		ACB0FDEE19FEFDDB00906B29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FDEC19FEFDDB00906B29 /* LaunchScreen.xib */; };
-		ACB0FDFA19FEFDDB00906B29 /* MeuQueridoMapaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDF919FEFDDB00906B29 /* MeuQueridoMapaTests.swift */; };
+		ACB0FE0419FEFE0000906B29 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB0FE0319FEFE0000906B29 /* MapKit.framework */; };
+		ACB0FE0819FF0A3B00906B29 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FE0719FF0A3B00906B29 /* WebService.swift */; };
+		ACB0FE0A19FF0EDD00906B29 /* FavoritosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FE0919FF0EDD00906B29 /* FavoritosTableViewController.swift */; };
+		ACB0FE0C19FF0EFC00906B29 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FE0B19FF0EFC00906B29 /* AddViewController.swift */; };
+		ACB0FE0F19FF18C700906B29 /* MapaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FE0D19FF18C700906B29 /* MapaModel.xcdatamodeld */; };
+		ACB0FE1119FF1C7500906B29 /* Locais.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FE1019FF1C7500906B29 /* Locais.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +31,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ACB0FDDE19FEFDDB00906B29 /* MeuQueridoMapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuQueridoMapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB0FDDE19FEFDDB00906B29 /* MeuQueridoTempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuQueridoTempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0FDE219FEFDDB00906B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB0FDE319FEFDDB00906B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACB0FDE519FEFDDB00906B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACB0FDE519FEFDDB00906B29 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		ACB0FDE819FEFDDB00906B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACB0FDEA19FEFDDB00906B29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACB0FDED19FEFDDB00906B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		ACB0FDF319FEFDDB00906B29 /* MeuQueridoMapaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeuQueridoMapaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB0FDF319FEFDDB00906B29 /* MeuQueridoTempoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeuQueridoTempoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0FDF819FEFDDB00906B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB0FDF919FEFDDB00906B29 /* MeuQueridoMapaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuQueridoMapaTests.swift; sourceTree = "<group>"; };
+		ACB0FE0319FEFE0000906B29 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ACB0FE0719FF0A3B00906B29 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		ACB0FE0919FF0EDD00906B29 /* FavoritosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosTableViewController.swift; sourceTree = "<group>"; };
+		ACB0FE0B19FF0EFC00906B29 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		ACB0FE0E19FF18C700906B29 /* MapaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MapaModel.xcdatamodel; sourceTree = "<group>"; };
+		ACB0FE1019FF1C7500906B29 /* Locais.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locais.swift; path = ../Locais.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB0FE0419FEFE0000906B29 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +70,9 @@
 		ACB0FDD519FEFDDB00906B29 = {
 			isa = PBXGroup;
 			children = (
+				ACB0FE0319FEFE0000906B29 /* MapKit.framework */,
 				ACB0FDE019FEFDDB00906B29 /* MeuQueridoMapa */,
-				ACB0FDF619FEFDDB00906B29 /* MeuQueridoMapaTests */,
+				ACB0FDF619FEFDDB00906B29 /* MeuQueridoTempoTests */,
 				ACB0FDDF19FEFDDB00906B29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,8 +80,8 @@
 		ACB0FDDF19FEFDDB00906B29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACB0FDDE19FEFDDB00906B29 /* MeuQueridoMapa.app */,
-				ACB0FDF319FEFDDB00906B29 /* MeuQueridoMapaTests.xctest */,
+				ACB0FDDE19FEFDDB00906B29 /* MeuQueridoTempo.app */,
+				ACB0FDF319FEFDDB00906B29 /* MeuQueridoTempoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,11 +90,14 @@
 			isa = PBXGroup;
 			children = (
 				ACB0FDE319FEFDDB00906B29 /* AppDelegate.swift */,
-				ACB0FDE519FEFDDB00906B29 /* ViewController.swift */,
 				ACB0FDE719FEFDDB00906B29 /* Main.storyboard */,
 				ACB0FDEA19FEFDDB00906B29 /* Images.xcassets */,
 				ACB0FDEC19FEFDDB00906B29 /* LaunchScreen.xib */,
+				ACB0FE0619FF09F700906B29 /* viewcontrollers */,
+				ACB0FE1219FF1C9100906B29 /* model */,
+				ACB0FE0519FF09E200906B29 /* utils */,
 				ACB0FDE119FEFDDB00906B29 /* Supporting Files */,
+				ACB0FE0D19FF18C700906B29 /* MapaModel.xcdatamodeld */,
 			);
 			path = MeuQueridoMapa;
 			sourceTree = "<group>";
@@ -95,12 +110,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ACB0FDF619FEFDDB00906B29 /* MeuQueridoMapaTests */ = {
+		ACB0FDF619FEFDDB00906B29 /* MeuQueridoTempoTests */ = {
 			isa = PBXGroup;
 			children = (
-				ACB0FDF919FEFDDB00906B29 /* MeuQueridoMapaTests.swift */,
 				ACB0FDF719FEFDDB00906B29 /* Supporting Files */,
 			);
+			name = MeuQueridoTempoTests;
 			path = MeuQueridoMapaTests;
 			sourceTree = "<group>";
 		};
@@ -112,12 +127,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ACB0FE0519FF09E200906B29 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0FE0719FF0A3B00906B29 /* WebService.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		ACB0FE0619FF09F700906B29 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0FDE519FEFDDB00906B29 /* MapaViewController.swift */,
+				ACB0FE0919FF0EDD00906B29 /* FavoritosTableViewController.swift */,
+				ACB0FE0B19FF0EFC00906B29 /* AddViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		ACB0FE1219FF1C9100906B29 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				ACB0FE1019FF1C7500906B29 /* Locais.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACB0FDDD19FEFDDB00906B29 /* MeuQueridoMapa */ = {
+		ACB0FDDD19FEFDDB00906B29 /* MeuQueridoTempo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACB0FDFD19FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoMapa" */;
+			buildConfigurationList = ACB0FDFD19FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoTempo" */;
 			buildPhases = (
 				ACB0FDDA19FEFDDB00906B29 /* Sources */,
 				ACB0FDDB19FEFDDB00906B29 /* Frameworks */,
@@ -127,14 +168,14 @@
 			);
 			dependencies = (
 			);
-			name = MeuQueridoMapa;
+			name = MeuQueridoTempo;
 			productName = MeuQueridoMapa;
-			productReference = ACB0FDDE19FEFDDB00906B29 /* MeuQueridoMapa.app */;
+			productReference = ACB0FDDE19FEFDDB00906B29 /* MeuQueridoTempo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ACB0FDF219FEFDDB00906B29 /* MeuQueridoMapaTests */ = {
+		ACB0FDF219FEFDDB00906B29 /* MeuQueridoTempoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACB0FE0019FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoMapaTests" */;
+			buildConfigurationList = ACB0FE0019FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoTempoTests" */;
 			buildPhases = (
 				ACB0FDEF19FEFDDB00906B29 /* Sources */,
 				ACB0FDF019FEFDDB00906B29 /* Frameworks */,
@@ -145,9 +186,9 @@
 			dependencies = (
 				ACB0FDF519FEFDDB00906B29 /* PBXTargetDependency */,
 			);
-			name = MeuQueridoMapaTests;
+			name = MeuQueridoTempoTests;
 			productName = MeuQueridoMapaTests;
-			productReference = ACB0FDF319FEFDDB00906B29 /* MeuQueridoMapaTests.xctest */;
+			productReference = ACB0FDF319FEFDDB00906B29 /* MeuQueridoTempoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -161,6 +202,11 @@
 				TargetAttributes = {
 					ACB0FDDD19FEFDDB00906B29 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ACB0FDF219FEFDDB00906B29 = {
 						CreatedOnToolsVersion = 6.0;
@@ -168,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ACB0FDD919FEFDDB00906B29 /* Build configuration list for PBXProject "MeuQueridoMapa" */;
+			buildConfigurationList = ACB0FDD919FEFDDB00906B29 /* Build configuration list for PBXProject "MeuQueridoTempo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACB0FDDD19FEFDDB00906B29 /* MeuQueridoMapa */,
-				ACB0FDF219FEFDDB00906B29 /* MeuQueridoMapaTests */,
+				ACB0FDDD19FEFDDB00906B29 /* MeuQueridoTempo */,
+				ACB0FDF219FEFDDB00906B29 /* MeuQueridoTempoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -212,7 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB0FDE619FEFDDB00906B29 /* ViewController.swift in Sources */,
+				ACB0FE0C19FF0EFC00906B29 /* AddViewController.swift in Sources */,
+				ACB0FE0819FF0A3B00906B29 /* WebService.swift in Sources */,
+				ACB0FE0A19FF0EDD00906B29 /* FavoritosTableViewController.swift in Sources */,
+				ACB0FE1119FF1C7500906B29 /* Locais.swift in Sources */,
+				ACB0FDE619FEFDDB00906B29 /* MapaViewController.swift in Sources */,
+				ACB0FE0F19FF18C700906B29 /* MapaModel.xcdatamodeld in Sources */,
 				ACB0FDE419FEFDDB00906B29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB0FDFA19FEFDDB00906B29 /* MeuQueridoMapaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +280,7 @@
 /* Begin PBXTargetDependency section */
 		ACB0FDF519FEFDDB00906B29 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ACB0FDDD19FEFDDB00906B29 /* MeuQueridoMapa */;
+			target = ACB0FDDD19FEFDDB00906B29 /* MeuQueridoTempo */;
 			targetProxy = ACB0FDF419FEFDDB00906B29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -340,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeuQueridoMapa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MeuQueridoTempo;
 			};
 			name = Debug;
 		};
@@ -350,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MeuQueridoMapa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MeuQueridoTempo;
 			};
 			name = Release;
 		};
@@ -368,7 +418,7 @@
 				);
 				INFOPLIST_FILE = MeuQueridoMapaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MeuQueridoTempoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeuQueridoMapa.app/MeuQueridoMapa";
 			};
 			name = Debug;
@@ -383,7 +433,7 @@
 				);
 				INFOPLIST_FILE = MeuQueridoMapaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MeuQueridoTempoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeuQueridoMapa.app/MeuQueridoMapa";
 			};
 			name = Release;
@@ -391,7 +441,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACB0FDD919FEFDDB00906B29 /* Build configuration list for PBXProject "MeuQueridoMapa" */ = {
+		ACB0FDD919FEFDDB00906B29 /* Build configuration list for PBXProject "MeuQueridoTempo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACB0FDFB19FEFDDB00906B29 /* Debug */,
@@ -400,7 +450,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACB0FDFD19FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoMapa" */ = {
+		ACB0FDFD19FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoTempo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACB0FDFE19FEFDDB00906B29 /* Debug */,
@@ -408,7 +458,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		ACB0FE0019FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoMapaTests" */ = {
+		ACB0FE0019FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoTempoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ACB0FE0119FEFDDB00906B29 /* Debug */,
@@ -417,6 +467,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACB0FE0D19FF18C700906B29 /* MapaModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACB0FE0E19FF18C700906B29 /* MapaModel.xcdatamodel */,
+			);
+			currentVersion = ACB0FE0E19FF18C700906B29 /* MapaModel.xcdatamodel */;
+			path = MapaModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACB0FDD619FEFDDB00906B29 /* Project object */;
 }

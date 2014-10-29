@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddViewController.swift
 //  MeuQueridoMapa
 //
 //  Created by Usuário Convidado on 27/10/14.
@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var txfLocal: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let teste:WebService = WebService()
+        teste.getLocal(textField.description)
+        return true
+    }
 
 }
-

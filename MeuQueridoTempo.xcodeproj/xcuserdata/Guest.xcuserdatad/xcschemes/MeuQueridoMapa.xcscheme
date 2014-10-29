@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ACB0FDDD19FEFDDB00906B29"
-               BuildableName = "MeuQueridoMapa.app"
-               BlueprintName = "MeuQueridoMapa"
-               ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+               BuildableName = "MeuQueridoTempo.app"
+               BlueprintName = "MeuQueridoTempo"
+               ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ACB0FDF219FEFDDB00906B29"
-               BuildableName = "MeuQueridoMapaTests.xctest"
-               BlueprintName = "MeuQueridoMapaTests"
-               ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+               BuildableName = "MeuQueridoTempoTests.xctest"
+               BlueprintName = "MeuQueridoTempoTests"
+               ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ACB0FDF219FEFDDB00906B29"
-               BuildableName = "MeuQueridoMapaTests.xctest"
-               BlueprintName = "MeuQueridoMapaTests"
-               ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+               BuildableName = "MeuQueridoTempoTests.xctest"
+               BlueprintName = "MeuQueridoTempoTests"
+               ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ACB0FDDD19FEFDDB00906B29"
-            BuildableName = "MeuQueridoMapa.app"
-            BlueprintName = "MeuQueridoMapa"
-            ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+            BuildableName = "MeuQueridoTempo.app"
+            BlueprintName = "MeuQueridoTempo"
+            ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ACB0FDDD19FEFDDB00906B29"
-            BuildableName = "MeuQueridoMapa.app"
-            BlueprintName = "MeuQueridoMapa"
-            ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+            BuildableName = "MeuQueridoTempo.app"
+            BlueprintName = "MeuQueridoTempo"
+            ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ACB0FDDD19FEFDDB00906B29"
-            BuildableName = "MeuQueridoMapa.app"
-            BlueprintName = "MeuQueridoMapa"
-            ReferencedContainer = "container:MeuQueridoMapa.xcodeproj">
+            BuildableName = "MeuQueridoTempo.app"
+            BlueprintName = "MeuQueridoTempo"
+            ReferencedContainer = "container:MeuQueridoTempo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
