@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOY-Ry-Oie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="532"/>
+            <point key="canvasLocation" x="996" y="532"/>
         </scene>
         <!--Mapa View Controller-->
         <scene sceneID="Nuq-4P-rmP">
@@ -180,7 +180,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yt-92-T3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="468"/>
+            <point key="canvasLocation" x="295" y="532"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yKu-ht-iFj">
@@ -242,7 +242,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xdl-Zl-AE3"/>
-        <segue reference="Cic-ii-2V8"/>
+        <segue reference="zxf-bu-kLN"/>
+        <segue reference="61a-t1-GSg"/>
     </inferredMetricsTieBreakers>
 </document>
