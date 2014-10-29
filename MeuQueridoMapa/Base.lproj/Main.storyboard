@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="731" y="532"/>
         </scene>
-        <!--View Controller-->
+        <!--Mapa View Controller-->
         <scene sceneID="Nuq-4P-rmP">
             <objects>
-                <viewController id="2j0-dv-6FC" sceneMemberID="viewController">
+                <viewController id="2j0-dv-6FC" customClass="MapaViewController" customModule="MeuQueridoTempo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSa-LB-nMk"/>
                         <viewControllerLayoutGuide type="bottom" id="z2w-qX-C33"/>
@@ -122,6 +122,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c50-S0-rvU">
                                 <rect key="frame" x="-7" y="64" width="334" height="455"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2j0-dv-6FC" id="oRJ-nX-TMK"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,7 +242,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cic-ii-2V8"/>
         <segue reference="xdl-Zl-AE3"/>
+        <segue reference="Cic-ii-2V8"/>
     </inferredMetricsTieBreakers>
 </document>
