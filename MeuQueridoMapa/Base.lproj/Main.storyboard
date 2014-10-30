@@ -138,7 +138,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="sNS-7y-8R8" kind="show" id="Cic-ii-2V8"/>
+                        <segue destination="sNS-7y-8R8" kind="show" identifier="Detalhes" id="Cic-ii-2V8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biK-g1-mM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,6 +243,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zxf-bu-kLN"/>
-        <segue reference="61a-t1-GSg"/>
+        <segue reference="Cic-ii-2V8"/>
     </inferredMetricsTieBreakers>
 </document>
