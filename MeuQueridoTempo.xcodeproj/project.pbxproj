@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC68D5FB1A0197850067AAC8 /* MapaItemAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68D5FA1A0197850067AAC8 /* MapaItemAnnotation.swift */; };
 		ACB0FDE419FEFDDB00906B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDE319FEFDDB00906B29 /* AppDelegate.swift */; };
 		ACB0FDE619FEFDDB00906B29 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0FDE519FEFDDB00906B29 /* MapaViewController.swift */; };
 		ACB0FDE919FEFDDB00906B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB0FDE719FEFDDB00906B29 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC68D5FA1A0197850067AAC8 /* MapaItemAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaItemAnnotation.swift; sourceTree = "<group>"; };
 		ACB0FDDE19FEFDDB00906B29 /* MeuQueridoTempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuQueridoTempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB0FDE219FEFDDB00906B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB0FDE319FEFDDB00906B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				ACB0FDE519FEFDDB00906B29 /* MapaViewController.swift */,
 				ACB0FE0919FF0EDD00906B29 /* FavoritosTableViewController.swift */,
 				ACB0FE0B19FF0EFC00906B29 /* AddViewController.swift */,
+				AC68D5FA1A0197850067AAC8 /* MapaItemAnnotation.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				ACB0FE0819FF0A3B00906B29 /* WebService.swift in Sources */,
 				ACB0FE0A19FF0EDD00906B29 /* FavoritosTableViewController.swift in Sources */,
 				ACB0FE1119FF1C7500906B29 /* Locais.swift in Sources */,
+				AC68D5FB1A0197850067AAC8 /* MapaItemAnnotation.swift in Sources */,
 				ACB0FDE619FEFDDB00906B29 /* MapaViewController.swift in Sources */,
 				ACB0FE0F19FF18C700906B29 /* MapaModel.xcdatamodeld in Sources */,
 				ACB0FDE419FEFDDB00906B29 /* AppDelegate.swift in Sources */,
@@ -457,6 +461,7 @@
 				ACB0FDFF19FEFDDB00906B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACB0FE0019FEFDDB00906B29 /* Build configuration list for PBXNativeTarget "MeuQueridoTempoTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +470,7 @@
 				ACB0FE0219FEFDDB00906B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
