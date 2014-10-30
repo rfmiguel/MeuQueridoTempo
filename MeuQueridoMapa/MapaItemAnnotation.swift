@@ -22,7 +22,7 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
     var tempMaxima: NSDecimalNumber
     var tempMinina: NSDecimalNumber
     var humidade: NSNumber
-    var mapItem: MKMapItem
+    //var mapItem: MKMapItem
     var imageName = UIImage(named: "annotation")
     
     init(
@@ -36,8 +36,8 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
         temperatuma: NSDecimalNumber,
         tempMaxima: NSDecimalNumber,
         tempMinina:  NSDecimalNumber,
-        humidade: NSNumber,
-        mapItem: MKMapItem) {
+        humidade: NSNumber
+        /*mapItem: MKMapItem*/) {
             
         self.coordinate = coordinate
         self.title = title
@@ -50,7 +50,7 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
         self.tempMaxima = tempMaxima
         self.tempMinina = tempMinina
         self.humidade = humidade
-        self.mapItem = mapItem
+      //  self.mapItem = mapItem
     }
 
     
