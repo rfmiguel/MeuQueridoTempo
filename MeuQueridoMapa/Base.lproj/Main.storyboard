@@ -138,6 +138,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="mapView" destination="c50-S0-rvU" id="ilX-EO-HKz"/>
                         <segue destination="sNS-7y-8R8" kind="show" identifier="Detalhes" id="Cic-ii-2V8"/>
                     </connections>
                 </viewController>
@@ -242,7 +243,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zxf-bu-kLN"/>
+        <segue reference="xdl-Zl-AE3"/>
         <segue reference="Cic-ii-2V8"/>
     </inferredMetricsTieBreakers>
 </document>
