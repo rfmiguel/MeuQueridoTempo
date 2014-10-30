@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.getFetchedResultController()
     }
 
+    
+    func getFetchedResultController() {
+        
+        
+        let fetchRequest = NSFetchRequest(entityName: "Locais")
+        
+        let sortDescriptor = NSSortDescriptor(key: "autor", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        //        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        //
+        //        fetchedResultController.delegate = self
+        //
+        //        fetchedResultController.performFetch(nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
