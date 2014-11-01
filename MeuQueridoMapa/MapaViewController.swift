@@ -8,45 +8,33 @@
 
 import UIKit
 import MapKit
+import CoreData
 
-class MapaViewController: UIViewController, MKMapViewDelegate {
+class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
 
     var locationManager: CLLocationManager = CLLocationManager()
-    
     var annotation: MapaItemAnnotation!
+    var fetchedResultController:NSFetchedResultsController? = nil
+    var locais:Array<LocalVO> = Array<LocalVO>()
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
         
         let testeLocal:CLLocationCoordinate2D  = CLLocationCoordinate2DMake(-23.550303,-46.634184)
         
-        self.mapView.region = MKCoordinateRegionMakeWithDistance(testeLocal, 8000, 8000)
+        self.mapView.region = MKCoordinateRegionMakeWithDistance(testeLocal, 100000, 100000)
         self.mapView.delegate = self
         
-       /* for localis in  {
-            
-            var cidade : String = (localis as Locais).cidade
-            var lat : Double = (localis as Locais).lat
-            var long : Double = (localis as Locais).long
-            var imagemClima : String = (localis as Locais).imagemClima
-            var descricaoClima : String = (localis as Locais).descricaoClima
-            var temperatuma : NSDecimalNumber = (localis as Locais).temperatuma
-            var tempMaxima : NSDecimalNumber = (localis as Locais).tempMaxima
-            var tempMinina : NSDecimalNumber = (localis as Locais).tempMinina
-            var humidade : NSNumber = (localis as Locais).humidade
-            
-            var location:CLLocationCoordinate2D  = CLLocationCoordinate2DMake(lat,long)
-            
-            var annotation = MapaItemAnnotation(coordinate: location, title: cidade, subtitle: "" , lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricaoClima, temperatuma: temperatuma, tempMaxima: tempMaxima, tempMinina: tempMinina, humidade: humidade)
-            
-            self.mapView.addAnnotation(annotation)
-            
-        }*/
+        let localDAO = LocaisDAO()
+        self.fetchedResultController = localDAO.getNSFetchResultController()
+        self.fetchedResultController!.performFetch(nil)
+        self.fetchedResultController?.delegate = self
         
+        self.insertAnnotation()
         //criar anotaçao customizada para a FIAP
         self.annotation = MapaItemAnnotation(coordinate: testeLocal, title: "FIAP", subtitle: "Faculdade Tecnologia", lat: -23.550303, long: -46.634184, imagemClima: "01d", descricaoClima: "", temperatuma: 12, tempMaxima: 12, tempMinina: 20, humidade: 50)
         
@@ -72,7 +60,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate {
             }
             
             //add pin
-            anView.image = UIImage(named:"01d")
+            anView.image = UIImage(named:(annotation as MapaItemAnnotation).imagemClima )
 
             //permitir que mostre o "balão" com informações da marcação
             anView.canShowCallout = true
@@ -88,6 +76,36 @@ class MapaViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         self.performSegueWithIdentifier("Detalhes", sender: (view.annotation as MapaItemAnnotation))
     }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.insertAnnotation()
+    }
 
+    func insertAnnotation(){
+        let localDAO = LocaisDAO()
+        self.locais = localDAO.getLocais()
+        
+        for local in  self.locais{
+            
+            let cidade : String = local.cidade!
+            let lat : Double = local.lat!
+            let long : Double = local.long!
+            let imagemClima : String = local.imagemClima
+            let descricaoClima : String = local.descricaoClima
+            let temperatuma : Double = local.temperatuma!
+            let tempMaxima : Double = local.tempMaxima!
+            let tempMinina : Double = local.tempMinina!
+            let humidade : Double = local.humidade!
+            
+            let location:CLLocationCoordinate2D  = CLLocationCoordinate2DMake(lat,long)
+            
+            let annotation = MapaItemAnnotation(coordinate: location, title: cidade, subtitle: "" , lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricaoClima, temperatuma: temperatuma, tempMaxima: tempMaxima, tempMinina: tempMinina, humidade: humidade)
+            
+            self.mapView.addAnnotation(annotation)
+            
+        }
+        
+    }
 }
 

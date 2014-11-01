@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rqw-Dk-b68">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rqw-Dk-b68">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <scenes>
         <!--Add View Controller-->
@@ -28,14 +28,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3l-1n-L60">
-                                <rect key="frame" x="90" y="204" width="214" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM4-C0-5ju">
-                                <rect key="frame" x="90" y="239" width="214" height="21"/>
+                                <rect key="frame" x="90" y="196" width="214" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,12 +39,9 @@
                                 <state key="normal" title="Confirma">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkz-LJ-t3w">
-                                <rect key="frame" x="174" y="351" width="56" height="30"/>
-                                <state key="normal" title="Cancela">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="clickBtConfirma:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="ydc-m8-Vx9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-hH-g52">
                                 <rect key="frame" x="16" y="110" width="288" height="30"/>
@@ -66,13 +57,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkz-LJ-t3w">
+                                <rect key="frame" x="174" y="351" width="56" height="30"/>
+                                <state key="normal" title="Cancela">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBtCancela:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="CrC-Jb-0KX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="lbCidade" destination="23J-bM-bGe" id="Mtz-AD-UCU"/>
-                        <outlet property="lbEstado" destination="Q3l-1n-L60" id="UDd-iE-RAd"/>
                         <outlet property="lbPais" destination="PM4-C0-5ju" id="0Zf-sF-5t9"/>
                         <outlet property="txfLocal" destination="fEL-hH-g52" id="WjX-rm-C9v"/>
                     </connections>
@@ -187,19 +186,33 @@
             </objects>
             <point key="canvasLocation" x="166" y="-179"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favoritos Table View Controller-->
         <scene sceneID="Tu2-Kj-3tS">
             <objects>
-                <tableViewController id="S3G-Q7-ccc" sceneMemberID="viewController">
+                <tableViewController id="S3G-Q7-ccc" customClass="FavoritosTableViewController" customModule="MeuQueridoTempo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zUy-MO-ZP3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="epq-dg-xOF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" textLabel="PGU-dB-CPq" detailTextLabel="dLc-56-N91" style="IBUITableViewCellStyleSubtitle" id="epq-dg-xOF">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="epq-dg-xOF" id="z8D-H3-wte">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGU-dB-CPq">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dLc-56-N91">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="sNS-7y-8R8" kind="show" id="61a-t1-GSg"/>
@@ -208,7 +221,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="S3G-Q7-ccc" id="Ao0-nu-oXD"/>
-                            <outlet property="delegate" destination="S3G-Q7-ccc" id="N48-eI-N1N"/>
+                            <outlet property="delegate" destination="S3G-Q7-ccc" id="cUc-8y-L6d"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sdr-YQ-VTZ">
@@ -285,6 +298,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zxf-bu-kLN"/>
-        <segue reference="61a-t1-GSg"/>
+        <segue reference="Cic-ii-2V8"/>
     </inferredMetricsTieBreakers>
 </document>

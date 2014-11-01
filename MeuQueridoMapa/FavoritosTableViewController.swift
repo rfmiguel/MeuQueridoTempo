@@ -9,28 +9,25 @@
 import UIKit
 import CoreData
 
-class FavoritosTableViewController: UITableViewController {
-
+class FavoritosTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var fetchedResultController:NSFetchedResultsController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.getFetchedResultController()
     }
-
     
     func getFetchedResultController() {
-        
-        
-        let fetchRequest = NSFetchRequest(entityName: "Locais")
-        
-        let sortDescriptor = NSSortDescriptor(key: "autor", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        //        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        //
-        //        fetchedResultController.delegate = self
-        //
-        //        fetchedResultController.performFetch(nil)
+        let localDAO = LocaisDAO()
+        self.fetchedResultController = localDAO.getNSFetchResultController()
+        self.fetchedResultController!.performFetch(nil)
+        self.fetchedResultController!.delegate = self
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,26 +38,23 @@ class FavoritosTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return self.fetchedResultController!.fetchedObjects!.count
     }
 
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
+        let item = self.fetchedResultController!.fetchedObjects![indexPath.row] as Locais
+        cell.textLabel?.text = item.cidade
+        cell.detailTextLabel?.text = item.temperatuma.description
+        cell.imageView?.image = UIImage(named: item.imagemClima)
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -11,11 +11,10 @@ import UIKit
 class AddViewController: UIViewController, UITextFieldDelegate {
 
     var climaRetorno:Array<Dictionary<String, AnyObject>>? = nil
-    //var locais:Locais =
+    var localVO:LocalVO? = nil
     
     
     @IBOutlet weak var lbCidade: UILabel!
-    @IBOutlet weak var lbEstado: UILabel!
     @IBOutlet weak var lbPais: UILabel!
     
     @IBOutlet weak var txfLocal: UITextField!
@@ -40,20 +39,24 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         climaRetorno = webservice.getLocal(cidade)
         for climas in self.climaRetorno!
         {
-            self.lbCidade.text = climas["name"]! as String
+            self.lbCidade.text = climas["name"]! as? String
             let sys = climas["sys"]! as Dictionary<String,AnyObject>
-            self.lbPais.text = sys["country"]! as String
+            self.lbPais.text = sys["country"]! as? String
             
-//            locais.cidade = climas["name"]! as String
-//            locais.lat =
-//            locais.long =
-//            @NSManaged var imagemClima: String
-//            @NSManaged var descricaoClima: String
-//            @NSManaged var temperatuma: NSDecimalNumber
-//            @NSManaged var tempMaxima: NSDecimalNumber
-//            @NSManaged var tempMinina: NSDecimalNumber
-//            @NSManaged var humidade: NSNumber
-
+            let cidade = climas["name"]! as String
+            let coord = climas["coord"]! as Dictionary<String,AnyObject>
+            let lat = coord["lat"]! as Double
+            let long = coord["lon"]! as Double
+            let tempo = (climas["weather"]! as Array<Dictionary<String,AnyObject>>)[0]
+            let imagemClima = tempo["icon"]! as String
+            let descricao = tempo["description"]! as String
+            let dadosTemperatura = climas["main"]! as Dictionary<String,AnyObject>
+            let temperatura = dadosTemperatura["temp"]! as Double
+            let temperaturaMaxima = dadosTemperatura["temp"]! as Double
+            let temperaturaMinima = dadosTemperatura["temp"]! as Double
+            let humidade = dadosTemperatura["temp"]! as Double
+            
+            self.localVO = LocalVO(cidade: cidade, lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricao, temperatuma: temperatura, tempMaxima: temperaturaMaxima, tempMinina: temperaturaMinima, humidade: humidade)
             
         }
         
@@ -63,4 +66,21 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    @IBAction func clickBtConfirma(sender: UIButton) {
+        if(localVO != nil){
+            let localDAO = LocaisDAO()
+            localDAO.insert(localVO!)
+            self.sair()
+        }
+        
+    }
+    
+    @IBAction func clickBtCancela(sender: UIButton) {
+        self.sair()
+    }
+    
+    private func sair(){
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
 }
