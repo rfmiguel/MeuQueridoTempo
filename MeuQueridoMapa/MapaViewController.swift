@@ -24,9 +24,6 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         
         self.locationManager.requestWhenInUseAuthorization()
         
-        let testeLocal:CLLocationCoordinate2D  = CLLocationCoordinate2DMake(-23.550303,-46.634184)
-        
-        self.mapView.region = MKCoordinateRegionMakeWithDistance(testeLocal, 100000, 100000)
         self.mapView.delegate = self
         
         let localDAO = LocaisDAO()
@@ -35,11 +32,10 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         self.fetchedResultController?.delegate = self
         
         self.insertAnnotation()
-        //criar anotaçao customizada para a FIAP
-        self.annotation = MapaItemAnnotation(coordinate: testeLocal, title: "FIAP", subtitle: "Faculdade Tecnologia", lat: -23.550303, long: -46.634184, imagemClima: "01d", descricaoClima: "", temperatuma: 12, tempMaxima: 12, tempMinina: 20, humidade: 50)
         
          self.mapView.addAnnotation(annotation)
         
+        self.ajustaRegionMapa()
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,6 +76,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.mapView.removeAnnotations(self.mapView.annotations)
         self.insertAnnotation()
+        self.ajustaRegionMapa()
     }
 
     func insertAnnotation(){
@@ -107,5 +104,35 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         }
         
     }
+    
+    func ajustaRegionMapa(){
+        if(self.mapView.annotations.count > 0){
+            var topLeftCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0);
+            topLeftCoord.latitude = -90;
+            topLeftCoord.longitude = 180;
+        
+            var bottomRightCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0);
+            bottomRightCoord.latitude = 90;
+            bottomRightCoord.longitude = -180;
+        
+            for anotation in self.mapView.annotations{
+                topLeftCoord.longitude = fmin(topLeftCoord.longitude, anotation.coordinate.longitude);
+                topLeftCoord.latitude = fmax(topLeftCoord.latitude, anotation.coordinate.latitude);
+            
+                bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, anotation.coordinate.longitude);
+                bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, anotation.coordinate.latitude);
+            }
+        
+            var region:MKCoordinateRegion = MKCoordinateRegion(center: topLeftCoord, span:MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0));
+            region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.3;
+            region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.3;
+            region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 2;
+            region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 2;
+        
+            self.mapView.regionThatFits(region);
+            self.mapView.setRegion(region, animated: true);
+        }else{
+            
+        }
+    }
 }
-
