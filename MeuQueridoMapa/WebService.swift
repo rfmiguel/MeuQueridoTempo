@@ -23,7 +23,7 @@ class WebService: NSObject {
         let newLocal:String = local.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         let strUrl:String = "http://api.openweathermap.org/data/2.5/find?q=".stringByAppendingString(newLocal).stringByAppendingString("&units=metric&LANG=pt")
-        let url:NSURL = NSURL(string: strUrl)
+        let url:NSURL = NSURL(string: strUrl)!
         println(strUrl)
 
         let request:NSURLRequest = NSURLRequest(URL: url )
@@ -43,8 +43,8 @@ class WebService: NSObject {
     func getState(lat:String,long:String) -> String
     {
         
-        let url:NSURL = NSURL(string: _pathWsGoogle.stringByAppendingString(lat).stringByAppendingString(",").stringByAppendingString(long).stringByAppendingString("&sensor=true_or_false") )
-        let request:NSURLRequest = NSURLRequest(URL: url )
+//        let url:NSURL = NSURL(string: _pathWsGoogle.stringByAppendingString(lat).stringByAppendingString(",").stringByAppendingString(long).stringByAppendingString("&sensor=true_or_false") !)
+//        let request:NSURLRequest = NSURLRequest(URL: url )
         
         
         

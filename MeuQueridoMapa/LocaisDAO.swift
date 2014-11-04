@@ -24,7 +24,7 @@ struct LocaisDAO{
         let model = NSManagedObjectModel(contentsOfURL: modelURL!)
         
         // Criação do coordenador
-        var coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
+        var coordinator = NSPersistentStoreCoordinator(managedObjectModel: model!)
         
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let applicationDocumentsDirectory = urls[0] as NSURL
@@ -59,8 +59,9 @@ struct LocaisDAO{
         //Executa o Fetch
         LocaisDAO.fetchedResultController.performFetch(nil)
         
-        for local in LocaisDAO.fetchedResultController.fetchedObjects!{
-            let localVO = LocalVO(cidade: (local as Locais).cidade, lat: (local as Locais).lat, long: (local as Locais).long, imagemClima: (local as Locais).imagemClima, descricaoClima: (local as Locais).descricaoClima, temperatuma: (local as Locais).temperatuma, tempMaxima: (local as Locais).tempMaxima, tempMinina: (local as Locais).tempMinina, humidade: (local as Locais).humidade)
+        for local in LocaisDAO.fetchedResultController.fetchedObjects! as Array<Locais> {
+            
+            let localVO = LocalVO(cidade:local.cidade as String, lat:(local.lat as Double), long:(local.long as Double), imagemClima: (local.imagemClima as String), descricaoClima: (local.descricaoClima as String), temperatuma: (local.temperatuma as Double), tempMaxima: (local.tempMaxima as Double), tempMinina: (local.tempMinina as Double), humidade: (local.humidade as Double))
             locaisArr.append(localVO)
         }
         return locaisArr
