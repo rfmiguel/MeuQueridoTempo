@@ -84,6 +84,11 @@ struct LocaisDAO{
         
         LocaisDAO.managedObjectContext?.save(nil)
     }
+
+    func delete(local:NSManagedObject){
+        LocaisDAO.managedObjectContext?.deleteObject(local)
+        LocaisDAO.managedObjectContext?.save(nil)
+    }
     
     func getNSFetchResultController()->NSFetchedResultsController{
         let fetchRequest = NSFetchRequest(entityName: "Locais")
