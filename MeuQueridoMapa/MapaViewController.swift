@@ -83,7 +83,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         let localDAO = LocaisDAO()
         self.locais = localDAO.getLocais()
         let arrLocais = self.locais as Array<LocalVO>
-        //for local in  self.locais{
+
         for(var i:Int = 0; i < arrLocais.count;i++){
             let cidade : String = arrLocais[i].cidade!
             let lat : Double = arrLocais[i].lat!
