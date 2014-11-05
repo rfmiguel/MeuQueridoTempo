@@ -63,9 +63,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
                 let descricao = tempo["description"]! as String
                 let dadosTemperatura = climas["main"]! as Dictionary<String,AnyObject>
                 let temperatura = dadosTemperatura["temp"]! as Double
-                let temperaturaMaxima = dadosTemperatura["temp"]! as Double
-                let temperaturaMinima = dadosTemperatura["temp"]! as Double
-                let humidade = dadosTemperatura["temp"]! as Double
+                let temperaturaMaxima = dadosTemperatura["temp_max"]! as Double
+                let temperaturaMinima = dadosTemperatura["temp_min"]! as Double
+                let humidade = dadosTemperatura["humidity"]! as Double
                 
                 self.localVO = LocalVO(cidade: cidade, lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricao, temperatuma: temperatura, tempMaxima: temperaturaMaxima, tempMinina: temperaturaMinima, humidade: humidade)
                 
