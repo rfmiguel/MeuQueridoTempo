@@ -10,10 +10,35 @@ import UIKit
 
 class DetalheViewController: UIViewController {
 
+    @IBOutlet weak var lblTemp: UILabel!
+    @IBOutlet weak var lblMaxtemp: UILabel!
+    @IBOutlet weak var lblMintemp: UILabel!
+    @IBOutlet weak var lblLat: UILabel!
+    @IBOutlet weak var lblLong: UILabel!
+    @IBOutlet weak var lblCidade: UILabel!
+    @IBOutlet weak var lblEstado: UILabel!
+    @IBOutlet weak var lblDescricao: UILabel!
+    @IBOutlet weak var lblHumidade: UILabel!
+    
+    var local:Locais?
+    var temperatura:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
+        let temperauta:Int = Int(local!.temperatuma)
+        let tempmin:Int = Int(local!.tempMinina)
+        let tempmax:Int = Int(local!.tempMaxima)
+        
+        lblTemp.text = "\(temperauta)"
+        lblMaxtemp.text = "\(tempmax)"
+        lblMintemp.text = "\(tempmin)"
+        lblLat.text = "\(local!.lat)"
+        lblLong.text = "\(local!.long)"
+        lblHumidade.text = "\(local!.humidade)"
+        lblCidade.text = "\(local!.cidade)"
+        lblDescricao.text = "\(local!.descricaoClima)"
     }
 
     override func didReceiveMemoryWarning() {

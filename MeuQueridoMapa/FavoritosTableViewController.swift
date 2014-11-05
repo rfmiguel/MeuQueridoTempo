@@ -12,6 +12,7 @@ import CoreData
 class FavoritosTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchedResultController:NSFetchedResultsController? = nil
+    var localSender:LocalVO?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,16 @@ class FavoritosTableViewController: UITableViewController, NSFetchedResultsContr
         }    
     }
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+
+        
+        var item = self.fetchedResultController!.fetchedObjects![indexPath.row] as Locais
+
+        self.performSegueWithIdentifier("detailsegue", sender:item)
+    }
+    
 
     /*
     // Override to support rearranging the table view.
@@ -92,14 +103,18 @@ class FavoritosTableViewController: UITableViewController, NSFetchedResultsContr
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+
+        var vc:DetalheViewController = segue.destinationViewController as DetalheViewController
+        vc.local = (sender as Locais)
+        
     }
-    */
+    
+    
 
 }

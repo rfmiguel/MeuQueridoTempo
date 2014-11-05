@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11CC11C61A0A39B900356E32 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC11C51A0A39B900356E32 /* SplashViewController.swift */; };
+		11EC85271A0A435A00D4F6B4 /* Animacao.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11EC85261A0A435A00D4F6B4 /* Animacao.xib */; };
+		11EC85291A0A45AD00D4F6B4 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EC85281A0A45AD00D4F6B4 /* LaunchView.swift */; };
 		5BF040771A05169800D15108 /* LocaisDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF040761A05169800D15108 /* LocaisDAO.swift */; };
 		5BF040791A05179C00D15108 /* LocalVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF040781A05179C00D15108 /* LocalVO.swift */; };
 		5BF0407B1A05184500D15108 /* Locais.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0407A1A05184500D15108 /* Locais.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11CC11C51A0A39B900356E32 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		11EC85261A0A435A00D4F6B4 /* Animacao.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Animacao.xib; sourceTree = "<group>"; };
+		11EC85281A0A45AD00D4F6B4 /* LaunchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		5BF040761A05169800D15108 /* LocaisDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaisDAO.swift; sourceTree = "<group>"; };
 		5BF040781A05179C00D15108 /* LocalVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalVO.swift; sourceTree = "<group>"; };
 		5BF0407A1A05184500D15108 /* Locais.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locais.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				ACB0FE0B19FF0EFC00906B29 /* AddViewController.swift */,
 				AC68D5FA1A0197850067AAC8 /* MapaItemAnnotation.swift */,
 				AC722B991A01BFA500287354 /* DetalheViewController.swift */,
+				11CC11C51A0A39B900356E32 /* SplashViewController.swift */,
+				11EC85261A0A435A00D4F6B4 /* Animacao.xib */,
+				11EC85281A0A45AD00D4F6B4 /* LaunchView.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			files = (
 				ACB0FDE919FEFDDB00906B29 /* Main.storyboard in Resources */,
 				ACB0FDEE19FEFDDB00906B29 /* LaunchScreen.xib in Resources */,
+				11EC85271A0A435A00D4F6B4 /* Animacao.xib in Resources */,
 				ACB0FDEB19FEFDDB00906B29 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +292,8 @@
 				ACB0FE0C19FF0EFC00906B29 /* AddViewController.swift in Sources */,
 				5BF040771A05169800D15108 /* LocaisDAO.swift in Sources */,
 				ACB0FE0819FF0A3B00906B29 /* WebService.swift in Sources */,
+				11EC85291A0A45AD00D4F6B4 /* LaunchView.swift in Sources */,
+				11CC11C61A0A39B900356E32 /* SplashViewController.swift in Sources */,
 				ACB0FE0A19FF0EDD00906B29 /* FavoritosTableViewController.swift in Sources */,
 				5BF040791A05179C00D15108 /* LocalVO.swift in Sources */,
 				5BF0407B1A05184500D15108 /* Locais.swift in Sources */,

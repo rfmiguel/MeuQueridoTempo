@@ -14,12 +14,15 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     var localVO:LocalVO? = nil
     
     
+    @IBOutlet weak var lbLoading: UILabel!
+    @IBOutlet weak var acLoading: UIActivityIndicatorView!
     @IBOutlet weak var lbCidade: UILabel!
     @IBOutlet weak var lbPais: UILabel!
     
     @IBOutlet weak var txfLocal: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,13 +31,23 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+    
+        println("passei aqui")
+        println(self.lbLoading.text)
         self.buscaCidadeWs(textField.text)
         return true
     }
     
     func buscaCidadeWs(cidade:String)
     {
+        
+        self.acLoading.startAnimating()
+        self.lbLoading.text = "Carregando"
+        
+        sleep(10)
+        
+        
+        
         let webservice:WebService = WebService()
         climaRetorno = webservice.getLocal(cidade)
         for climas in self.climaRetorno!
@@ -61,7 +74,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         }
         
         
-        
+        self.lbLoading.text = ""
+        self.acLoading.stopAnimating()
         txfLocal.resignFirstResponder()
         
     }

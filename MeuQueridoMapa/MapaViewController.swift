@@ -70,7 +70,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
     }
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-        self.performSegueWithIdentifier("Detalhes", sender: (view.annotation as MapaItemAnnotation))
+        self.performSegueWithIdentifier("detailTosegue", sender: (view.annotation as MapaItemAnnotation))
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
@@ -130,7 +130,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
             region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 2;
         
             self.mapView.regionThatFits(region);
-            self.mapView.setRegion(region, animated: true);
+           // self.mapView.setRegion(region, animated: true);
         }else{
             
         }
