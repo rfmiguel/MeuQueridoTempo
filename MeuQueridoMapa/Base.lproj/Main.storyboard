@@ -283,7 +283,7 @@
                     <navigationItem key="navigationItem" id="sdr-YQ-VTZ">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="A1V-ce-UQl">
                             <connections>
-                                <segue destination="wMX-2k-Jfq" kind="show" id="zxf-bu-kLN"/>
+                                <segue destination="wMX-2k-Jfq" kind="show" identifier="detailsegueAdd" id="zxf-bu-kLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
