@@ -23,7 +23,7 @@ class WebService: NSObject {
         let newLocal:String = local.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         let strUrl:String = "http://api.openweathermap.org/data/2.5/find?q=".stringByAppendingString(newLocal).stringByAppendingString("&units=metric&LANG=pt")
-        let url:NSURL = NSURL(string: strUrl)!
+        let url:NSURL = NSURL(string: strUrl)
         println(strUrl)
 
         let request:NSURLRequest = NSURLRequest(URL: url )

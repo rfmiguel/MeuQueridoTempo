@@ -50,9 +50,9 @@ class FavoritosTableViewController: UITableViewController, NSFetchedResultsContr
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
         let item = self.fetchedResultController!.fetchedObjects![indexPath.row] as Locais
-        cell.textLabel.text = item.cidade
+        cell.textLabel!.text = item.cidade
         cell.detailTextLabel?.text = item.temperatuma.description
-        cell.imageView.image = UIImage(named: item.imagemClima)
+        cell.imageView!.image = UIImage(named: item.imagemClima)
         return cell
     }
     

@@ -130,7 +130,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
             region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 2;
         
             self.mapView.regionThatFits(region);
-           // self.mapView.setRegion(region, animated: true);
+            self.mapView.setRegion(region, animated: true);
         }else{
             
         }

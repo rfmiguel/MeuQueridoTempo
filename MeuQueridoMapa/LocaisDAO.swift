@@ -24,7 +24,7 @@ struct LocaisDAO{
         let model = NSManagedObjectModel(contentsOfURL: modelURL!)
         
         // Criação do coordenador
-        var coordinator = NSPersistentStoreCoordinator(managedObjectModel: model!)
+        var coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
         
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let applicationDocumentsDirectory = urls[0] as NSURL
