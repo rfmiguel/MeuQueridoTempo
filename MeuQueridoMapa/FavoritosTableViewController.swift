@@ -80,11 +80,11 @@ class FavoritosTableViewController: UITableViewController, NSFetchedResultsContr
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-
         
         var item = self.fetchedResultController!.fetchedObjects![indexPath.row] as Locais
 
         self.performSegueWithIdentifier("detailsegue", sender:item)
+        
     }
     
 
@@ -109,12 +109,14 @@ class FavoritosTableViewController: UITableViewController, NSFetchedResultsContr
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-
-        var vc:DetalheViewController = segue.destinationViewController as DetalheViewController
-        vc.local = (sender as Locais)
+        if (segue.identifier == "detailsegue") {
+            var vc:DetalheViewController = segue.destinationViewController as DetalheViewController
+            vc.local = (sender as Locais)
+        }
+        else{
+            var vc:AddViewController = segue.destinationViewController as AddViewController
+        }
         
     }
-    
-    
 
 }

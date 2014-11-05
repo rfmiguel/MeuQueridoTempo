@@ -249,7 +249,7 @@
                     <navigationItem key="navigationItem" id="KBT-z0-hK4">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="617-bU-UIh">
                             <connections>
-                                <segue destination="wMX-2k-Jfq" kind="show" id="xdl-Zl-AE3"/>
+                                <segue destination="wMX-2k-Jfq" kind="show" identifier="detailTosegue" id="xdl-Zl-AE3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -300,7 +300,7 @@
                     <navigationItem key="navigationItem" id="sdr-YQ-VTZ">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="A1V-ce-UQl">
                             <connections>
-                                <segue destination="wMX-2k-Jfq" kind="show" id="zxf-bu-kLN"/>
+                                <segue destination="wMX-2k-Jfq" kind="show" identifier="detailsegueAdd" id="zxf-bu-kLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -428,6 +428,6 @@
         <image name="sol_animacao" width="244" height="206"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xdl-Zl-AE3"/>
+        <segue reference="zxf-bu-kLN"/>
     </inferredMetricsTieBreakers>
 </document>
