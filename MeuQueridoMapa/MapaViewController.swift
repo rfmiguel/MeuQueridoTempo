@@ -104,7 +104,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         }
         
     }
-    
+
     func ajustaRegionMapa(){
         if(self.mapView.annotations.count > 0){
             var topLeftCoord:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0);

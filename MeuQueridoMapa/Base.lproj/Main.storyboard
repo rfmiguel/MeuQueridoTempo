@@ -232,7 +232,7 @@
                     <navigationItem key="navigationItem" id="KBT-z0-hK4">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="617-bU-UIh">
                             <connections>
-                                <segue destination="wMX-2k-Jfq" kind="show" id="xdl-Zl-AE3"/>
+                                <segue destination="wMX-2k-Jfq" kind="show" identifier="detailTosegue" id="xdl-Zl-AE3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -411,6 +411,6 @@
         <image name="sol_animacao" width="244" height="206"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xdl-Zl-AE3"/>
+        <segue reference="zxf-bu-kLN"/>
     </inferredMetricsTieBreakers>
 </document>
