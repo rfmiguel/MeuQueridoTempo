@@ -34,6 +34,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-Ab-kxx">
+                                <rect key="frame" x="66" y="351" width="63" height="30"/>
+                                <state key="normal" title="Confirma">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBtConfirma:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="ydc-m8-Vx9"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-hH-g52">
                                 <rect key="frame" x="16" y="110" width="288" height="30"/>
                                 <constraints>
@@ -52,15 +61,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkz-LJ-t3w">
-                                <rect key="frame" x="174" y="351" width="56" height="30"/>
-                                <state key="normal" title="Cancela">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickBtCancela:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="CrC-Jb-0KX"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-mM-Re7">
                                 <rect key="frame" x="115" y="148" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -71,13 +71,13 @@
                                 <rect key="frame" x="87" y="148" width="20" height="20"/>
                                 <color key="color" red="0.019607843829999999" green="0.36078432199999999" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-Ab-kxx">
-                                <rect key="frame" x="66" y="351" width="63" height="30"/>
-                                <state key="normal" title="Confirma">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkz-LJ-t3w">
+                                <rect key="frame" x="194" y="351" width="56" height="30"/>
+                                <state key="normal" title="Cancela">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickBtConfirma:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="ydc-m8-Vx9"/>
+                                    <action selector="clickBtCancela:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="CrC-Jb-0KX"/>
                                 </connections>
                             </button>
                         </subviews>
