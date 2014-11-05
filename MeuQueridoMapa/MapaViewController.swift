@@ -96,22 +96,22 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
     func insertAnnotation(){
         let localDAO = LocaisDAO()
         self.locais = localDAO.getLocais()
-        
-        for local in  self.locais{
-            
-            let cidade : String = local.cidade!
-            let lat : Double = local.lat!
-            let long : Double = local.long!
-            let imagemClima : String = local.imagemClima
-            let descricaoClima : String = local.descricaoClima
-            let temperatuma : Double = local.temperatuma!
-            let tempMaxima : Double = local.tempMaxima!
-            let tempMinina : Double = local.tempMinina!
-            let humidade : Double = local.humidade!
+        let arrLocais = self.locais as Array<LocalVO>
+
+        for(var i:Int = 0; i < arrLocais.count;i++){
+            let cidade : String = arrLocais[i].cidade!
+            let lat : Double = arrLocais[i].lat!
+            let long : Double = arrLocais[i].long!
+            let imagemClima : String = arrLocais[i].imagemClima
+            let descricaoClima : String = arrLocais[i].descricaoClima
+            let temperatuma : Double = arrLocais[i].temperatuma!
+            let tempMaxima : Double = arrLocais[i].tempMaxima!
+            let tempMinina : Double = arrLocais[i].tempMinina!
+            let humidade : Double = arrLocais[i].humidade!
             
             let location:CLLocationCoordinate2D  = CLLocationCoordinate2DMake(lat,long)
             
-            let annotation = MapaItemAnnotation(coordinate: location, title: cidade, subtitle: "" , lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricaoClima, temperatuma: temperatuma, tempMaxima: tempMaxima, tempMinina: tempMinina, humidade: humidade)
+            let annotation = MapaItemAnnotation(coordinate: location, title: cidade, subtitle: "" , lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricaoClima, temperatuma: temperatuma, tempMaxima: tempMaxima, tempMinina: tempMinina, humidade: humidade, index: i)
             
             self.mapView.addAnnotation(annotation)
             
@@ -138,10 +138,10 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
             }
         
             var region:MKCoordinateRegion = MKCoordinateRegion(center: topLeftCoord, span:MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0));
-            region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.3;
-            region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.3;
-            region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.2;
-            region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.2;
+            region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+            region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+            region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.3;
+            region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.3;
         
             self.mapView.regionThatFits(region);
             self.mapView.setRegion(region, animated: true);

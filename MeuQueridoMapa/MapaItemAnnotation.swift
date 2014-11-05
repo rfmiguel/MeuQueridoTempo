@@ -24,6 +24,7 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
     var humidade: Double
     //var mapItem: MKMapItem
     var imageName = UIImage(named: "annotation")
+    var index: Int
     
     init(
         coordinate: CLLocationCoordinate2D,
@@ -36,7 +37,8 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
         temperatuma: Double,
         tempMaxima: Double,
         tempMinina:  Double,
-        humidade: Double
+        humidade: Double,
+        index: Int
         /*mapItem: MKMapItem*/) {
             
         self.coordinate = coordinate
@@ -50,6 +52,7 @@ class MapaItemAnnotation: NSObject, MKAnnotation  {
         self.tempMaxima = tempMaxima
         self.tempMinina = tempMinina
         self.humidade = humidade
+        self.index = index
       //  self.mapItem = mapItem
     }
 
