@@ -72,7 +72,9 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if (segue.identifier == "detailTosegueMap") {
-            let detalheViewController:DetalheViewController = segue.destinationViewController as DetalheViewController
+            var mapaItemAnnotation = sender as? MapaItemAnnotation
+            let detalheViewController:DetalheViewController = segue.destinationViewController as DetalheViewController            
+            detalheViewController.local = self.fetchedResultController!.fetchedObjects![mapaItemAnnotation!.index] as? Locais
         }else{
             var vc:AddViewController = segue.destinationViewController as AddViewController
         }
