@@ -81,8 +81,6 @@ struct LocaisDAO{
         local.tempMinina = localVO.tempMinina!
         local.humidade = localVO.humidade!
         
-        local.humidade = localVO.humidade!
-        
         LocaisDAO.managedObjectContext?.save(nil)
     }
 
