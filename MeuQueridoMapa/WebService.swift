@@ -14,10 +14,10 @@ class WebService: NSObject {
     var _pathWsGoogle:String = "http://maps.googleapis.com/maps/api/geocode/json?latlng="
     
     
-    func getLocal(local:String) -> Array<Dictionary<String, AnyObject>>
+    func getLocal(local:String, callBack:((Array<Dictionary<String, AnyObject>>) -> Void)!)
     {
         
-        println()
+
         
 //        let localformat = local.stringByAddingPercentEscapesUsingEncoding(encoding:)
         let newLocal:String = local.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
@@ -28,15 +28,27 @@ class WebService: NSObject {
 
         let request:NSURLRequest = NSURLRequest(URL: url )
 
-        
-        var error = NSErrorPointer()
         var response = AutoreleasingUnsafeMutablePointer<NSURLResponse?>()
-        var data:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: error)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), { (response, data, error) -> Void in
+            var errorPointer = NSErrorPointer()
+            var json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: errorPointer) as Dictionary<String, AnyObject>
+            self.clima = json["list"]! as? Array<Dictionary<String, AnyObject>>
+            callBack(self.clima!)
+        })
+//        var data:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: error)
+//        
+//        if(erro != nil)
+//        {
+//            
+//        }else
+//        {
+//            
+//        }
         
-        var json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: error) as Dictionary<String, AnyObject>
-        self.clima = json["list"]! as? Array<Dictionary<String, AnyObject>>
-        
-        return self.clima!
+//        var json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: error) as Dictionary<String, AnyObject>
+//        self.clima = json["list"]! as? Array<Dictionary<String, AnyObject>>
+//        
+//        return self.clima!
         
     }
     

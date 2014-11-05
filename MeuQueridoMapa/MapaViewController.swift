@@ -126,8 +126,8 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
             var region:MKCoordinateRegion = MKCoordinateRegion(center: topLeftCoord, span:MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0));
             region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.3;
             region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.3;
-            region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 2;
-            region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 2;
+            region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.2;
+            region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.2;
         
             self.mapView.regionThatFits(region);
             self.mapView.setRegion(region, animated: true);

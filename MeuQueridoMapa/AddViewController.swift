@@ -10,7 +10,6 @@ import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
 
-    var climaRetorno:Array<Dictionary<String, AnyObject>>? = nil
     var localVO:LocalVO? = nil
     
     
@@ -32,9 +31,10 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
     
-        println("passei aqui")
         println(self.lbLoading.text)
+        txfLocal.resignFirstResponder()
         self.buscaCidadeWs(textField.text)
+        
         return true
     }
     
@@ -44,39 +44,34 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         self.acLoading.startAnimating()
         self.lbLoading.text = "Carregando"
         
-        sleep(10)
-        
-        
         
         let webservice:WebService = WebService()
-        climaRetorno = webservice.getLocal(cidade)
-        for climas in self.climaRetorno!
-        {
-            self.lbCidade.text = climas["name"]! as? String
-            let sys = climas["sys"]! as Dictionary<String,AnyObject>
-            self.lbPais.text = sys["country"]! as? String
-            
-            let cidade = climas["name"]! as String
-            let coord = climas["coord"]! as Dictionary<String,AnyObject>
-            let lat = coord["lat"]! as Double
-            let long = coord["lon"]! as Double
-            let tempo = (climas["weather"]! as Array<Dictionary<String,AnyObject>>)[0]
-            let imagemClima = tempo["icon"]! as String
-            let descricao = tempo["description"]! as String
-            let dadosTemperatura = climas["main"]! as Dictionary<String,AnyObject>
-            let temperatura = dadosTemperatura["temp"]! as Double
-            let temperaturaMaxima = dadosTemperatura["temp"]! as Double
-            let temperaturaMinima = dadosTemperatura["temp"]! as Double
-            let humidade = dadosTemperatura["temp"]! as Double
-            
-            self.localVO = LocalVO(cidade: cidade, lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricao, temperatuma: temperatura, tempMaxima: temperaturaMaxima, tempMinina: temperaturaMinima, humidade: humidade)
-            
-        }
-        
-        
-        self.lbLoading.text = ""
-        self.acLoading.stopAnimating()
-        txfLocal.resignFirstResponder()
+        webservice.getLocal(cidade, callBack: { (retorno) -> Void in
+            for climas in retorno
+            {
+                self.lbCidade.text = climas["name"]! as? String
+                let sys = climas["sys"]! as Dictionary<String,AnyObject>
+                self.lbPais.text = sys["country"]! as? String
+                
+                let cidade = climas["name"]! as String
+                let coord = climas["coord"]! as Dictionary<String,AnyObject>
+                let lat = coord["lat"]! as Double
+                let long = coord["lon"]! as Double
+                let tempo = (climas["weather"]! as Array<Dictionary<String,AnyObject>>)[0]
+                let imagemClima = tempo["icon"]! as String
+                let descricao = tempo["description"]! as String
+                let dadosTemperatura = climas["main"]! as Dictionary<String,AnyObject>
+                let temperatura = dadosTemperatura["temp"]! as Double
+                let temperaturaMaxima = dadosTemperatura["temp"]! as Double
+                let temperaturaMinima = dadosTemperatura["temp"]! as Double
+                let humidade = dadosTemperatura["temp"]! as Double
+                
+                self.localVO = LocalVO(cidade: cidade, lat: lat, long: long, imagemClima: imagemClima, descricaoClima: descricao, temperatuma: temperatura, tempMaxima: temperaturaMaxima, tempMinina: temperaturaMinima, humidade: humidade)
+                
+            }
+            self.lbLoading.text = ""
+            self.acLoading.stopAnimating()
+        })
         
     }
 

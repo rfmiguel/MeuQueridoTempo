@@ -34,17 +34,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-Ab-kxx">
-                                <rect key="frame" x="70" y="351" width="63" height="30"/>
-                                <state key="normal" title="Confirma">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickBtConfirma:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="ydc-m8-Vx9"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-hH-g52">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-hH-g52">
                                 <rect key="frame" x="16" y="110" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3xy-RL-GEV"/>
+                                    <constraint firstAttribute="width" constant="288" id="fYl-YL-tmX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                 <connections>
@@ -72,12 +67,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-Di-znP">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-Di-znP">
                                 <rect key="frame" x="87" y="148" width="20" height="20"/>
                                 <color key="color" red="0.019607843829999999" green="0.36078432199999999" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xA8-Ab-kxx">
+                                <rect key="frame" x="66" y="351" width="63" height="30"/>
+                                <state key="normal" title="Confirma">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBtConfirma:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="ydc-m8-Vx9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fEL-hH-g52" firstAttribute="top" secondItem="HZg-F2-5Zh" secondAttribute="bottom" constant="46" id="JGA-vg-Db4"/>
+                            <constraint firstAttribute="centerX" secondItem="fEL-hH-g52" secondAttribute="centerX" id="uI4-Ly-xLC"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -220,14 +228,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c50-S0-rvU">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c50-S0-rvU">
                                 <rect key="frame" x="-7" y="64" width="334" height="455"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="-7" y="64" width="575" height="455"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="2j0-dv-6FC" id="oRJ-nX-TMK"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z2w-qX-C33" firstAttribute="top" secondItem="c50-S0-rvU" secondAttribute="bottom" id="4QB-Ym-lKa"/>
+                            <constraint firstItem="c50-S0-rvU" firstAttribute="top" secondItem="LSa-LB-nMk" secondAttribute="bottom" id="aB6-z2-pJW"/>
+                            <constraint firstAttribute="trailing" secondItem="c50-S0-rvU" secondAttribute="trailing" id="c0R-fh-wRg"/>
+                            <constraint firstItem="c50-S0-rvU" firstAttribute="leading" secondItem="JLc-Qn-Z6A" secondAttribute="leading" id="yR6-EZ-40m"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KBT-z0-hK4">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="617-bU-UIh">
@@ -243,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biK-g1-mM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-179"/>
+            <point key="canvasLocation" x="978" y="-179.25"/>
         </scene>
         <!--Favoritos Table View Controller-->
         <scene sceneID="Tu2-Kj-3tS">
