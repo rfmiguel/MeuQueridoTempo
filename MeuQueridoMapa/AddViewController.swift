@@ -47,6 +47,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
         let webservice:WebService = WebService()
         webservice.getLocal(cidade, callBack: { (retorno) -> Void in
+     
             for climas in retorno
             {
                 self.lbCidade.text = climas["name"]! as? String
@@ -71,6 +72,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             }
             self.lbLoading.text = ""
             self.acLoading.stopAnimating()
+                
+          
         })
         
     }

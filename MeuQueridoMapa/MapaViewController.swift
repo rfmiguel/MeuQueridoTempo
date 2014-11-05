@@ -33,7 +33,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         
         self.insertAnnotation()
         
-         self.mapView.addAnnotation(annotation)
+        self.mapView.addAnnotation(annotation)
         
         self.ajustaRegionMapa()
     }
@@ -69,8 +69,24 @@ class MapaViewController: UIViewController, MKMapViewDelegate, NSFetchedResultsC
         return nil
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if (segue.identifier == "detailTosegueMap") {
+            var mapaItemAnnotation = sender as? MapaItemAnnotation
+            let detalheViewController:DetalheViewController = segue.destinationViewController as DetalheViewController            
+            detalheViewController.local = self.fetchedResultController!.fetchedObjects![mapaItemAnnotation!.index] as? Locais
+        }else{
+            var vc:AddViewController = segue.destinationViewController as AddViewController
+        }
+        
+        
+        //let detalheViewController:DetalheViewController = segue.destinationViewController as DetalheViewController
+       // var index =  mapView.indexOfAccessibilityElement(sender);
+      //  detalheViewController.local = self.fetchedResultController!.fetchedObjects![index] as Locais
+    }
+    
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
-        self.performSegueWithIdentifier("detailTosegue", sender: (view.annotation as MapaItemAnnotation))
+        self.performSegueWithIdentifier("detailTosegueMap", sender: (view.annotation as MapaItemAnnotation))
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {

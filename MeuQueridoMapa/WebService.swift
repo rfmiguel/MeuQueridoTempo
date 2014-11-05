@@ -33,17 +33,13 @@ class WebService: NSObject {
             var errorPointer = NSErrorPointer()
             var json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: errorPointer) as Dictionary<String, AnyObject>
             self.clima = json["list"]! as? Array<Dictionary<String, AnyObject>>
+
             callBack(self.clima!)
+            
         })
 //        var data:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: error)
-//        
-//        if(erro != nil)
-//        {
-//            
-//        }else
-//        {
-//            
-//        }
+
+        
         
 //        var json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: error) as Dictionary<String, AnyObject>
 //        self.clima = json["list"]! as? Array<Dictionary<String, AnyObject>>
