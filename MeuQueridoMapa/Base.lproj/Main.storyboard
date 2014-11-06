@@ -61,13 +61,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-mM-Re7">
-                                <rect key="frame" x="115" y="148" width="91" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-Di-znP">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-Di-znP">
                                 <rect key="frame" x="87" y="148" width="20" height="20"/>
                                 <color key="color" red="0.019607843829999999" green="0.36078432199999999" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
@@ -80,11 +74,25 @@
                                     <action selector="clickBtCancela:" destination="wMX-2k-Jfq" eventType="touchUpInside" id="CrC-Jb-0KX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMt-mM-Re7">
+                                <rect key="frame" x="115" y="148" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="YBZ-pd-TxR"/>
+                                    <constraint firstAttribute="height" constant="21" id="yrW-Yi-VGY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fEL-hH-g52" firstAttribute="top" secondItem="HZg-F2-5Zh" secondAttribute="bottom" constant="46" id="JGA-vg-Db4"/>
+                            <constraint firstItem="TMt-mM-Re7" firstAttribute="leading" secondItem="ExO-Di-znP" secondAttribute="trailing" constant="8" id="eOd-FR-JiZ"/>
+                            <constraint firstItem="TMt-mM-Re7" firstAttribute="top" secondItem="fEL-hH-g52" secondAttribute="bottom" constant="8" id="gFm-Eg-k2D"/>
                             <constraint firstAttribute="centerX" secondItem="fEL-hH-g52" secondAttribute="centerX" id="uI4-Ly-xLC"/>
+                            <constraint firstAttribute="centerX" secondItem="TMt-mM-Re7" secondAttribute="centerX" id="vG8-Sq-lgh"/>
+                            <constraint firstItem="ExO-Di-znP" firstAttribute="top" secondItem="fEL-hH-g52" secondAttribute="bottom" constant="8" id="xjo-5E-IEa"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
