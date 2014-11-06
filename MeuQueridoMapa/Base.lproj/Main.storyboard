@@ -271,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="978" y="-179.25"/>
         </scene>
-        <!--Favoritos Table View Controller-->
+        <!--Favoritos-->
         <scene sceneID="Tu2-Kj-3tS">
             <objects>
                 <tableViewController id="S3G-Q7-ccc" customClass="FavoritosTableViewController" customModule="MeuQueridoTempo" customModuleProvider="target" sceneMemberID="viewController">
@@ -306,7 +306,7 @@
                             <outlet property="delegate" destination="S3G-Q7-ccc" id="cUc-8y-L6d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sdr-YQ-VTZ">
+                    <navigationItem key="navigationItem" title="Favoritos" id="sdr-YQ-VTZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="A1V-ce-UQl">
                             <connections>
                                 <segue destination="wMX-2k-Jfq" kind="show" identifier="detailsegueAdd" id="zxf-bu-kLN"/>
@@ -440,7 +440,7 @@
         <image name="sol_animacao" width="244" height="206"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ENH-SI-Q37"/>
-        <segue reference="xdl-Zl-AE3"/>
+        <segue reference="zxf-bu-kLN"/>
+        <segue reference="gbc-VI-BjH"/>
     </inferredMetricsTieBreakers>
 </document>
