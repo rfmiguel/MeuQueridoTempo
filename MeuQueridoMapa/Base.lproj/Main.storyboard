@@ -367,11 +367,13 @@
             </objects>
             <point key="canvasLocation" x="-41" y="166"/>
         </scene>
-        <!--Mapa-->
+        <!--Navigation Controller-->
         <scene sceneID="Lwm-uk-i9J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dah-JK-FNN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mapa" id="g1T-0q-mRY"/>
+                    <tabBarItem key="tabBarItem" title="" image="mapa_icone" id="g1T-0q-mRY">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="-1" vertical="10"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBt-wO-z6p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -425,6 +427,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mapa_icone" width="32" height="48"/>
         <image name="nuvem_chuva_feliz" width="620" height="875"/>
         <image name="sol_animacao" width="244" height="206"/>
     </resources>
