@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="1808" y="532"/>
         </scene>
-        <!--Mapa View Controller-->
+        <!--Meu Querido Tempo-->
         <scene sceneID="Nuq-4P-rmP">
             <objects>
                 <viewController id="2j0-dv-6FC" customClass="MapaViewController" customModule="MeuQueridoTempo" customModuleProvider="target" sceneMemberID="viewController">
@@ -246,7 +246,7 @@
                             <constraint firstItem="c50-S0-rvU" firstAttribute="leading" secondItem="JLc-Qn-Z6A" secondAttribute="leading" id="yR6-EZ-40m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KBT-z0-hK4">
+                    <navigationItem key="navigationItem" title="Meu Querido Tempo" id="KBT-z0-hK4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="617-bU-UIh">
                             <connections>
                                 <segue destination="wMX-2k-Jfq" kind="show" identifier="detailTosegue" id="xdl-Zl-AE3"/>
@@ -367,12 +367,12 @@
             </objects>
             <point key="canvasLocation" x="-41" y="166"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Meu Querido Tempo-->
         <scene sceneID="Lwm-uk-i9J">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dah-JK-FNN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="mapa_icone" id="g1T-0q-mRY">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="-1" vertical="10"/>
+                <navigationController title="Meu Querido Tempo" automaticallyAdjustsScrollViewInsets="NO" id="Dah-JK-FNN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locais" image="mapa" id="g1T-0q-mRY">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBt-wO-z6p">
@@ -388,11 +388,11 @@
             </objects>
             <point key="canvasLocation" x="446" y="-179"/>
         </scene>
-        <!--Meus Locais-->
+        <!--Navigation Controller-->
         <scene sceneID="Fo1-WD-H7b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z0k-v1-BxB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meus Locais" id="hb8-AH-NHM"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="hb8-AH-NHM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TkC-VX-Xff">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -427,7 +427,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mapa_icone" width="32" height="48"/>
+        <image name="mapa" width="16" height="24"/>
         <image name="nuvem_chuva_feliz" width="620" height="875"/>
         <image name="sol_animacao" width="244" height="206"/>
     </resources>
